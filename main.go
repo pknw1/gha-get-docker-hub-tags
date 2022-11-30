@@ -115,4 +115,6 @@ func main() {
 
 	semver.Sort(tags)
 	fmt.Println(fmt.Sprintf(`::set-output name=tag::%s`, tags[len(tags)-1]))
+	fmt.Println(fmt.Sprintf(`::set-output name=tag0::%s`, tags[0].images | jq .[].digest))
+
 }
